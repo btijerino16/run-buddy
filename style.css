@@ -10,14 +10,23 @@ body    {
 /* apply styles to <header> */ 
 
 header  {
+  position: -webkit-sticky;
+position: sticky;
+top: 0;
     padding: 20px 35px;
     background-color: #39a6b2;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-image: url("./assets/hero-bg.jpg");
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-position: 80%;
 }
 
 header h1 { 
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     font-weight: bold;
     margin: 0;
     font-size: 36px;
@@ -42,6 +51,7 @@ header nav ul {
   }
 
 header nav ul li a {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
@@ -79,7 +89,8 @@ section {
 /* Hero Style Start */
 
 .hero {
-
+  background-attachment: fixed;
+  background-position: 80%;
     background-image: url("/Users/bianc/Desktop/projects/run-buddy/assets/hero-bg.jpg");
     background-size: cover;
     background-position: center;
@@ -100,12 +111,14 @@ section {
   }
 
 .hero-form {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border: 3px solid #024e76;
     background-color: #fce138;
     padding: 20px;
     color: #024e76;
     width: 40%;
     margin: 3.5%;
+    border-radius: 15px;
 }
 
 .hero-form p {
@@ -121,6 +134,7 @@ section {
 }
 
 .hero-form button {
+  border-radius: 10px;
     color: #fce138;
     background-color: #024e76;
     border: none;
@@ -129,6 +143,7 @@ section {
 }
 
 .hero-cta h2 {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     font-style: italic;
     font-size: 55px;
     color: #fce138;
@@ -137,6 +152,7 @@ section {
 /* Hero Style End */
 
 .form-input {
+  border-radius: 10px;
     border: 1px solid #024e76;
     display: block;
     padding: 7px 15px;
@@ -144,8 +160,14 @@ section {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    background-color: rgba(255,255,255, 0.75);
+
 }
 
+.form-input:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+}
 
 .intro p {
         line-height: 1.7;
@@ -156,6 +178,7 @@ section {
         text-align: center
     }
 
+    /*Steps */
 
     .steps {
       background: #fce138;
@@ -191,11 +214,11 @@ section {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #39a6b2;
   }
 
   .step-img {
@@ -211,6 +234,12 @@ section {
   .step-text {
     flex: 12;
   }
+
+  .step:last-child {
+    border-bottom: none;
+  }
+
+  /*End of steps*/
 
   .section-title {
     font-size: 48px;
@@ -361,6 +390,7 @@ section {
   /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   header {
+    position: relative
     padding-bottom: 0;
     justify-content: center;
   }
@@ -376,7 +406,7 @@ section {
     justify-content: center;
   }
 
-  header nav ul li a {
+  header nav ul li a :hover{
     font-size 20px;
   }
 
@@ -391,8 +421,9 @@ section {
   
   .hero-cta {
     text-align: center;
-  
-    .section-title {
+  }
+
+  .section-title 
       width: 80%;
     }
     
@@ -436,7 +467,7 @@ section {
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
-  .hero-form button {
+  .hero-form button :hover {
     width: 100%;
   }
 
@@ -464,5 +495,17 @@ section {
   order: 3;
 }
   
+.contact-form input, .contact-form textarea {
+  border-radius: 10px;
+  background-color: rgba(255,255,255, 0.75);
+
+}
+
+.contact-form button :hover {
+border-radius: 10px;
+} 
   
-  
+.contact-form input:focus, .contact-form textarea:focus {
+  background-color: rgba(255,255,255, 0.75);
+
+}
